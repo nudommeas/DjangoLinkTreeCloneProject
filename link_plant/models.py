@@ -24,6 +24,9 @@ class Link(models.Model):
     url = models.URLField()
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='links')
 
+    def __str__(self):
+        return f"{self.text} | {self.url}"
+
 # What does related_name do? So, basically, the profile field(parent class) lives on the Link table.So if we wanted to access a certain profile that's associated with a Link
 # We could just look up a specific link and then look up that profile through 
 
